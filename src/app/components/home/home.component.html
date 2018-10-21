@@ -1,0 +1,22 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Temp (C°)</th>
+      <th>Min Temp (C°)</th>
+      <th>Max Temp (C°)</th>
+      <th>Sky's state</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let widget of tobeDisplayedWidgets">
+      <td>{{widget.name}}</td>
+      <td>{{(widget.main.temp - 273.15).toFixed(2)}}</td>
+      <td>{{widget.main.temp_min - 273.15}}</td>
+      <td>{{widget.main.temp_max - 273.15}}</td>
+      <td>{{widget.weather[0].description}}</td>
+      <td><img src="http://openweathermap.org/img/w/{{widget.weather[0].icon}}.png" alt="Smiley face"></td>
+    </tr>
+  </tbody>
+  </table>

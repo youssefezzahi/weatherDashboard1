@@ -1,0 +1,23 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>CountryCode</th>
+      <th>City</th>
+      <th>ID</th>
+      <th>Show it in Home</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let widget of checkedWidgets">
+      <td>{{widget.countryCode}}</td>
+      <td>{{widget.city}}</td>
+      <td>{{widget.id}}</td>
+      <td>
+        <label class="container"> 
+          <input type="checkbox"  [checked] = "widget.state" data-md-icheck (change)="toggleVisibility($event,widget)"/>
+            <span class="checkmark"></span>
+        </label>
+      </td>
+    </tr>
+  </tbody>
+  </table>
