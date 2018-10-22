@@ -4,7 +4,8 @@ import {RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
-import * as $ from "jquery";
+import {DataTableModule} from "angular-6-datatable";
+import { SearchPipe } from './components/home/searchPipe';
 // import components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     HomeComponent,
     EditComponent,
     NavbarComponent,
+    SearchPipe
     
   ],
   imports: [
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     DataTablesModule,
-    FormsModule
+    FormsModule,
+    DataTableModule
   ],
   providers: [
     WidgetApiService,

@@ -36,29 +36,29 @@ export const WIDGETS: any[] = [
         countryCode: "NL",
         state: true
     },
-    // {
-    //     id: 2800931,
-    //     city: "Bruges",
-    //     countryCode: "BE",
-    //     state: true
-    // },
-    // {
-    //     id: 2990363,
-    //     city: "Nimes",
-    //     countryCode: "FR",
-    //     state: true
-    // },
-    // {
-    //     id: 6454924,
-    //     city: "Nice",
-    //     countryCode: "FR",
-    //     state: true
-    // },
-    // {
-    //     id: 2996944,
-    //     city: "Lyon",
-    //     countryCode: "FR",
-    //     state: true
-    // },
+    {
+        id: 2800931,
+        city: "Bruges",
+        countryCode: "BE",
+        state: true
+    },
+    {
+        id: 2990363,
+        city: "Nimes",
+        countryCode: "FR",
+        state: true
+    },
+    {
+        id: 6454924,
+        city: "Nice",
+        countryCode: "FR",
+        state: true
+    },
+    {
+        id: 2996944,
+        city: "Lyon",
+        countryCode: "FR",
+        state: true
+    },
     
 ]

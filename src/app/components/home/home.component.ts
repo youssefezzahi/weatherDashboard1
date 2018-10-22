@@ -15,31 +15,13 @@ export class HomeComponent implements OnInit {
   dtElement: DataTableDirective;
   widgets: any[] = [];
   tobeDisplayedWidgets: any[] = [];
+  name = "";
   constructor(private widgetService: WidgetApiService,private http: HttpClient) { }
 
   ngOnInit() {
     this.getTemperatures1();
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      responsive: true,
-      destroy: true
-    };
   }
-  ngAfterViewInit(): void {
-    this.dtTrigger.next();
-  }
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
-  }
-  rerender(): void {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      // Destroy the table first
-      dtInstance.destroy();
-      // Call the dtTrigger to rerender again
-      this.dtTrigger.next();
-    });
-  }
+
 
   getTemperatures1() {
     this.widgetService.getCheckedWidgets()
@@ -49,8 +31,6 @@ export class HomeComponent implements OnInit {
           this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+widget.city+'&APPID=4f4b2e0412021adcf05f743a51e3b51b')
           .subscribe(widget => {
               this.tobeDisplayedWidgets.push(widget);
-              this.rerender() ;
-              this.dtTrigger.next();
           });
         }
         
